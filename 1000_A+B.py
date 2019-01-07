@@ -1,0 +1,5 @@
+num = input()
+t = num.split(" ")
+A = int(t[0])
+B = int(t[1])
+print(A+B)
