@@ -1,23 +1,24 @@
 import sys 
-word = sys.stdin.readline() 
-new_word = ''
-for i in word:
-    if 97 <= ord(i) <= 97+25:
-         new_word += chr(ord(i)-32)
-    else:
-        new_word += i 
+word = sys.stdin.readline().upper()
 
-n = 0
-w = 0
-for i in ''.join(set(new_word)):
-    if new_word.count(i) >= n:
-        if w is not '?':
-            n = new_word.count(i)
-            w = i 
-        else:
-            w = '?' 
+def wordstudy(word):
+    w_count = {}
+    for i in word: 
+        try: w_count[i] += 1
+        except: w_count[i] = 1
+    del w_count['\n']
+    
+    key_comp = ''
+    value_comp = 0
+    
+    for key, value in w_count.items():
+        if value > value_comp:
+            value_comp = value
+            key_comp = key
+        elif value == value_comp:
+            return '?'
+    return key_comp 
 
-print(w)
-        
+print(wordstudy(word))
     
     
