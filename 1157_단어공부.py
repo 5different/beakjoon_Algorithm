@@ -3,6 +3,7 @@ word = sys.stdin.readline().upper()
 
 def wordstudy(word):
     w_count = {}
+<<<<<<< HEAD
     #리스트나 문자열에 들어있는 각 원소들의 개수를 카운트해서 
     #딕셔너리 형태로 만드는 방법 
     for i in word: 
@@ -18,6 +19,16 @@ def wordstudy(word):
     key_comp = ''
     value_comp = 0
 
+=======
+    for i in word: 
+        try: w_count[i] += 1
+        except: w_count[i] = 1
+    del w_count['\n']
+    
+    key_comp = ''
+    value_comp = 0
+    
+>>>>>>> 7610b674acd0514cbe91e148a36da118b2f76155
     for key, value in w_count.items():
         if value > value_comp:
             value_comp = value
@@ -27,11 +38,14 @@ def wordstudy(word):
     return key_comp 
 
 print(wordstudy(word))
+<<<<<<< HEAD
 
   
 
     
 
 
+=======
+>>>>>>> 7610b674acd0514cbe91e148a36da118b2f76155
     
     
